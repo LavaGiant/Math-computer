@@ -1,9 +1,26 @@
 {
+  "name": "@malp/math-computed",
+  "version": "1.0.0",
+  "description": "",
   "main": "./dist/calculate.js",
   "types": "./dist/calculate.d.ts",
   "files": ["./dist"],
   "scripts": {
     "build": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "malp",
+    "computer",
+    "math",
+    "js-math",
+    "exact-math"
+  ],
+  "author": "malphite",
+  "license": "MIT",
+  "homepage": "https://github.com/LavaGiant/Math-computer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LavaGiant/Math-computer"
   },
   "devDependencies": {
     "tslint": "^6.1.3",
