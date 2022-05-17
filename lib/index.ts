@@ -13,6 +13,8 @@ export default class NumberPrecision {
     this.mul = this.mul.bind(this)
     this.div = this.div.bind(this)
     this.surp = this.surp.bind(this)
+    this.checkBoundary = this.checkBoundary.bind(this)
+    this.round = this.round.bind(this)
   }
   /**
    * @param num 数字
@@ -63,7 +65,7 @@ export default class NumberPrecision {
    * @returns
    * @description 精确加法(支持科学计数法)
    * @example
-   * add(0.1 + 0.2) = 0.3
+   * add(0.1, 0.2) = 0.3
    * add(1e-1, 2e-1) = 0.3
    * @author Malphite
    */
@@ -82,8 +84,8 @@ export default class NumberPrecision {
    * @returns
    * @description 精确减法(支持科学计数法)
    * @example
-   * sub(0.3 - 0.1) = 0.2
-   * sub(3e-1 - 1e-1) = 0.2
+   * sub(0.3, 0.1) = 0.2
+   * sub(3e-1, 1e-1) = 0.2
    * @author Malphite
    */
   public sub(...nums: numType[]): number {
@@ -101,8 +103,8 @@ export default class NumberPrecision {
    * @returns
    * @description 精确乘法(支持科学计数法)
    * @example
-   * sub(0.2 * 0.1) = 0.02
-   * sub(2e-1 * 1e-1) = 0.02
+   * sub(0.2, 0.1) = 0.02
+   * sub(2e-1, 1e-1) = 0.02
    * @author Malphite
    */
   public mul(...nums: numType[]): number {
@@ -123,8 +125,8 @@ export default class NumberPrecision {
    * @returns
    * @description 精确除法(支持科学计数法)
    * @example
-   * div(0.04 / 0.2) = 0.2
-   * div(4e-2 / 2e-1) = 0.2
+   * div(0.04, 0.2) = 0.2
+   * div(4e-2, 2e-1) = 0.2
    * @author Malphite
    */
   public div(...nums: numType[]): number {
@@ -177,7 +179,7 @@ export default class NumberPrecision {
 
   /**
    * @param num 数字
-   * @description 检查是否数字是否越界(支持科学计数法)
+   * @description 检查数字是否越界(支持科学计数法)
    * @author Malphite
    */
   public checkBoundary(num: number) {
