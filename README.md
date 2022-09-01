@@ -1,5 +1,5 @@
 # 说明文档
-## `math-computer`: 一个帮助你解决JS计算精度的问题
+## `math-computer`: 帮助你解决JS计算精度的问题
 
 如何安装？
 
