@@ -45,57 +45,58 @@ const sum = mathComputer.add(0.1, 0.2)
 
 ### 方法案例
 1. strip
-     + strip(0.09999999999999998) = 0.1
+ 
+    + strip(0.09999999999999998) = 0.1
 
-
-2. digitLength
+3. digitLength
 
     + digitLength(0.02) = 2
-
     + digitLength(2e-4) = 4
 
-3. add(不定参数)
+4. add(不定参数)
 
-   + add(0.1, 0.2) = 0.3
-   + add(0.1, 0.2, 0.3) = 0.7
-   + add(1e-1, 2e-1) = 0.3
+    + add(0.1, 0.2) = 0.3
+    + add(0.1, 0.2, 0.3) = 0.7
+    + add(1e-1, 2e-1) = 0.3
    
-4. sub(不定参数)
+5. sub(不定参数)
 
-   + sub(0.3, 0.1) = 0.2
-   + sub(0.5, 0.2, 0.1) = 0.2
-   + sub(3e-1, 1e-1) = 0.2
+    + sub(0.3, 0.1) = 0.2
+    + sub(0.5, 0.2, 0.1) = 0.2
+    + sub(3e-1, 1e-1) = 0.2
    
-5. mul(不定参数)
+6. mul(不定参数)
 
-   + mul(0.2, 0.1) = 0.02
-   + mul(0.2, 0.1, 0.1) = 0.002
-   + mul(2e-1, 1e-1) = 0.02
+    + mul(0.2, 0.1) = 0.02
+    + mul(0.2, 0.1, 0.1) = 0.002
+    + mul(2e-1, 1e-1) = 0.02
    
-6. div(不定参数)
+7. div(不定参数)
 
-   + div(0.04, 0.2) = 0.2
-   + div(0.04, 0.2, 0.1) = 2
-   + div(4e-2, 2e-1) = 0.2
+    + div(0.04, 0.2) = 0.2
+    + div(0.04, 0.2, 0.1) = 2
+    + div(4e-2, 2e-1) = 0.2
    
-7. surp(不定参数)
+8. surp(不定参数)
 
-   + surp(1.1, 1) = 0.1
-   + surp(2.1, 1, 0.03) = 0.01
-   + surp(11e-1, 1) = 0.1
+    + surp(1.1, 1) = 0.1
+    + surp(2.1, 1, 0.03) = 0.01
+    + surp(11e-1, 1) = 0.1
    
-8. float2Fixed
+9. float2Fixed
 
-   + float2Fixed(2.4) = 24
-   + float2Fixed(2.4e-4) = 24
+    + float2Fixed(2.4) = 24
+    + float2Fixed(2.4e-4) = 24
    
-9. checkBoundary
-   + checkBoundary(Number.MAX_SAFE_INTEGER + 1)
+10. checkBoundary
+ 
+    + checkBoundary(Number.MAX_SAFE_INTEGER + 1)
    
-10. round
+11. round
 
     + round(1.5555, 2) = 1.56
-
-     + round(1.5555, 1) = 1.6
-
-     + round(15555e-4, 2) = 1.56
+    + round(1.5555, 1) = 1.6
+    + round(15555e-4, 2) = 1.56
+    + 如果需要实现自动补零，可将第三个参数设置为true(默认为false)
+      + round(1.5, 2, false) = 1.5
+      + round(1.5, 2, true) = 1.50
