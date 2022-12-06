@@ -56,7 +56,7 @@ export default class NumberPrecision {
    */
   public digitLength(num: numType): number {
     const eSplit: string[] = num.toString().split(/[eE]/)
-    const len: number = (eSplit[0].split('.')[1] || '').length - +(eSplit[1] || 0)
+    const len: number = (eSplit[0].split('.')[1] || '').length - (+(eSplit[1] || 0))
     return len > 0 ? len : 0
   }
 
@@ -192,6 +192,7 @@ export default class NumberPrecision {
   /**
    * @param num 小数
    * @param ratio 精度
+   * @param supplyFlag 是否开启转化补零(开启后返回的类型为string)
    * @returns
    * @description 四舍五入(支持科学计数法)
    * @example
@@ -199,11 +200,19 @@ export default class NumberPrecision {
    * round(15555e-4, 2) = 1.56
    * @author Malphite
    */
-  public round(num: numType, ratio: number): number {
+  public round(num: numType, ratio: number, supplyFlag = false): numType {
     const base: number = Math.pow(10, ratio)
-    let result: number = this.div(Math.round(Math.abs(this.mul(num, base))), base)
+    let result: numType = this.div(Math.round(Math.abs(this.mul(num, base))), base)
     if (num < 0 && result !== 0) {
       result = this.mul(result, -1)
+    }
+    if (supplyFlag) {
+      while (digitLength(result) < ratio) {
+        if (digitLength(result) === 0) {
+          result = result + '.'
+        }
+        result += '0'
+      }
     }
     return result
   }
